@@ -11,7 +11,7 @@ export default function Home() {
     <Container>
       <GlobalStyled />
       <ExperienceBar />
-      <section>
+      <section >
         <div>
           <Profile />
         </div>

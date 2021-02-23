@@ -21,7 +21,6 @@ export const ContentInt = styled.div`
     }
 
     p{
-        align-items: center;
         font-size: 1rem;
 
         img{
