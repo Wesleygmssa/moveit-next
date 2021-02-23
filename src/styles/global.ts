@@ -37,7 +37,7 @@ export default createGlobalStyle`
 
     body{
         background: var(---backgroud);
-        color: var(---text);
+        color:  var(--text)
     }
 
     body , input , textarea , button {

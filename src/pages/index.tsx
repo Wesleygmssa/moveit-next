@@ -14,9 +14,9 @@ export default function Home() {
       <section >
         <div>
           <Profile />
+          <CompleteChallenges />
         </div>
         <div>
-          <CompleteChallenges />
         </div>
       </section>
     </Container>
