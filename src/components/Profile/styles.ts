@@ -4,25 +4,31 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
-
-    img{
+    > img{
         width: 5.5rem;
         height: 5.5rem;
         border-radius: 50%;
-    }
+    }    
+`;
 
-    div{
-        margin-left: 1.5rem;
-    }
+export const ContentInt = styled.div`
+  margin-left: 1.5rem;
 
-    strong{
+  strong{
         font-size: 1.5rem;
+        font-weight: 600;
         color: var(--title);
     }
 
     p{
+        align-items: center;
         font-size: 1rem;
-        margin-top: 0.5rem;
-        color: var(--title);
+
+        img{
+         margin-right: 0.5rem;
     }
+
+    }
+
+   
 `;

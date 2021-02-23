@@ -16,12 +16,13 @@ export const Container = styled.div`
         grid-template-columns: 1fr 1fr;
         gap: 6.25rem;
         align-content: center;
+        align-items: center;
+
     }
 
 `;
 
 export const LeftContainer = styled.div`
-
 
 
 `;

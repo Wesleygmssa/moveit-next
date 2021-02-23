@@ -1,3 +1,4 @@
+import CompleteChallenges from "../components/CompleteChallenges";
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import GlobalStyled from "../styles/global";
@@ -15,7 +16,7 @@ export default function Home() {
           <Profile />
         </div>
         <div>
-
+          <CompleteChallenges />
         </div>
       </section>
     </Container>
