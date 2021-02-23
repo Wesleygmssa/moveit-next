@@ -6,8 +6,6 @@ import GlobalStyled from "../styles/global";
 import { Container } from "./styles";
 import Head from 'next/head';
 
-
-
 export default function Home() {
   return (
     <Container>

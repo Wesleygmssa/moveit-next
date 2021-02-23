@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from './styles'
+import { Header } from './styles';
 
 export const ExperienceBar: React.FC = () => {
     return (
