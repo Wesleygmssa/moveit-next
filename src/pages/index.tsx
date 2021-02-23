@@ -1,4 +1,5 @@
 import CompleteChallenges from "../components/CompleteChallenges";
+import Countdown from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import GlobalStyled from "../styles/global";
@@ -15,6 +16,7 @@ export default function Home() {
         <div>
           <Profile />
           <CompleteChallenges />
+          <Countdown />
         </div>
         <div>
         </div>
