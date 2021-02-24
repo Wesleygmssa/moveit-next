@@ -1,0 +1,22 @@
+[
+    {
+        "type": "body",
+        "description": "I drink tea in the morning, and you?",
+        "amount": 80
+    },
+    {
+        "type": "body",
+        "description": "I drink tea in the morning, and you?",
+        "amount": 70
+    },
+    {
+        "type": "body",
+        "description": "I drink tea in the morning, and you?",
+        "amount": 60
+    },
+    {
+        "type": "body",
+        "description": "I drink tea in the morning, and you?",
+        "amount": 100
+    }
+]

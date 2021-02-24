@@ -8,7 +8,7 @@ import { ContainerInt, Container } from './styles';
 let countdownTimeOut: NodeJS.Timeout;
 
 const Countdown: React.FC = () => {
-    const { } = useContext(ChallengesContext);
+    const { startNewChallenge } = useContext(ChallengesContext);
 
 
     const [time, setTime] = useState(0.1 * 60);
@@ -38,6 +38,7 @@ const Countdown: React.FC = () => {
         } else if (isActive && time === 0) {
             setHasFinished(true);
             setIsActive(false);
+            startNewChallenge();
         }
     }, [isActive, time]);
 
