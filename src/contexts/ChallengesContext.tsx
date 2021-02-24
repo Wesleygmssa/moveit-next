@@ -35,21 +35,47 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
 
     const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
-    function levelUp() {
-        setLevel(level + 1)
-    }
-
     function startNewChallenge() {
-        const randomChallengeIndex = Math.floor(Math.random() * challenges.length); //desafios aleatorios
+        /*  
+            *Quando o contador chegar ao final 
+            *Essa função esta liberada pelo context
+            *Para ser utilizada global
+        */
+        const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
+        /* 
+            Pegando desafios aleátorio
+            pegando a quantidade de desafio
+        */
+
         const challenge = challenges[randomChallengeIndex];
+        /* 
+            Inseriando na variavel
+        */
+
 
         setActiveChanllenge(challenge);
+        /* 
+            setando desafio no estado
+            que erá passada global no estado
+            outro component
+
+            chanllengebox
+        */
     }
+
 
     function resetChallenge() {
         setActiveChanllenge(null);
-
+        /* 
+          /////
+        */
     }
+
+
+    function levelUp() {
+        setLevel(level + 1);
+    }
+
 
     return (
         <ChallengesContext.Provider value={{
@@ -58,7 +84,7 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
             challengesComleted,
             levelUp,
             startNewChallenge,
-            activeChallege,
+            activeChallege, // 02 inicando desafio
             resetChallenge,
             experienceToNextLevel
         }}>

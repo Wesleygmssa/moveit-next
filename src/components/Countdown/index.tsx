@@ -8,6 +8,7 @@ import { ContainerInt, Container } from './styles';
 let countdownTimeOut: NodeJS.Timeout;
 
 const Countdown: React.FC = () => {
+
     const { startNewChallenge } = useContext(ChallengesContext);
 
 
@@ -30,15 +31,39 @@ const Countdown: React.FC = () => {
         setTime(0.1 * 60);
     }
 
+    //iniciando contador
     useEffect(() => {
         if (isActive && time > 0) {
             countdownTimeOut = setTimeout(() => {
                 setTime(time - 1);
             }, 1000)
+
+
         } else if (isActive && time === 0) {
+            /* 
+                *Quando contador acabar, vamos 
+                *vamos fazer a regra de negocio
+            */
+
             setHasFinished(true);
+            /*
+             *quando acabar o contador setar como
+             *verdadeiro para habilittar o botão 
+            */
+
             setIsActive(false);
+            /* 
+            *Parando o contador 
+            *visualmente não muda nada
+            */
+
             startNewChallenge();
+            /* 
+            *inicando desafio, 
+            *quando contador chegar em zero, 
+            *
+            * (função criada no contexto global )
+            */
         }
     }, [isActive, time]);
 
