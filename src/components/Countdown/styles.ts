@@ -1,6 +1,21 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+
+.countdownButtonActive{
+    background: #ccc;
+    color: var(--title);
+    transition:  0.5s;
+  }
+
+.countdownButtonActive:hover{
+    background: var(--red);
+    color: var(--white);
+}
+
+`;
+
+export const ContainerInt = styled.div`
    display: flex;
    align-items: center;
    font-family:  Rajdhani;
@@ -38,5 +53,6 @@ export const Container = styled.div`
             border-left: 1px solid #f0f1f3;
        }
    }
+
 
 `;
