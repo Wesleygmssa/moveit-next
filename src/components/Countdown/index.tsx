@@ -1,10 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ChallengesContext } from '../../contexts/ChallengesContext';
 import Button from '../Button';
 import { ContainerInt, Container } from './styles';
+
+
 
 let countdownTimeOut: NodeJS.Timeout;
 
 const Countdown: React.FC = () => {
+    const { } = useContext(ChallengesContext);
+
+
     const [time, setTime] = useState(0.1 * 60);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);

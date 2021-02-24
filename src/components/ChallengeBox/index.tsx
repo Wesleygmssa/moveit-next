@@ -8,7 +8,6 @@ import { Container, NotActive, ChallengeActive } from "./styles";
 const ChallengeBox: React.FC = () => {
     const contextData = useContext(ChallengesContext);
 
-    console.log(contextData)
 
     const hasActiveChallenge = true;
 

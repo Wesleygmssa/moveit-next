@@ -1,11 +1,17 @@
-import { ChallengesContext } from '../contexts/ChallengesContext';
+import { ChallengesProvider } from '../contexts/ChallengesContext';
 
 function MyApp({ Component, pageProps }) {
+
+
   //todos elementos vai poder visiualizar
   return (
-    <ChallengesContext.Provider value={'teste'}>
+    // <ChallengesContext.Provider value={{ level, levelUp }}>
+    // </ChallengesContext.Provider>
+
+    <ChallengesProvider>
       <Component {...pageProps} />
-    </ChallengesContext.Provider>
+
+    </ChallengesProvider>
   )
 }
 
