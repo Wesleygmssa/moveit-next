@@ -13,6 +13,13 @@ export const Container = styled.div`
     color: var(--white);
 }
 
+.countdownButton{
+    background: #ccc;
+    color: var(--text);
+    cursor: not-allowed;
+    
+}
+
 `;
 
 export const ContainerInt = styled.div`
