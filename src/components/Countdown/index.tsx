@@ -87,17 +87,17 @@ const Countdown: React.FC = () => {
                 <Button
                     className="countdownButton"
                     disabled >
-                    Ciclo encerrado
+                    Cycle terminated
                 </Button>
             ) : (
                     <>
                         {isActive ? (
                             <Button type="button" onClick={resetCountdown} className="countdownButtonActive" >
-                                Abandonar ciclo
+                                Abandon cycle
                             </Button>
                         ) : (
                                 <Button type="button" onClick={startCountdown}  >
-                                    Iniciar um ciclo
+                                    Start a cycle Start a cycle
                                 </Button>
                             )
 

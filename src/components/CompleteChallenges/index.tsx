@@ -8,7 +8,7 @@ const Complete: React.FC = () => {
 
     return (
         <Container>
-            <span>Desafios completos</span>
+            <span>Complete challenges</span>
             <span>{challengesComleted}</span>
         </Container>
     )

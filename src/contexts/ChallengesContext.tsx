@@ -67,7 +67,8 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
     function resetChallenge() {
         setActiveChanllenge(null);
         /* 
-          /////
+          * voltando ao estado normal
+          *
         */
     }
 

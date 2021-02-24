@@ -19,11 +19,11 @@ const ChallengeBox: React.FC = () => {
         <Container>
             {activeChallege ? (
                 <ChallengeActive>
-                    <header> Ganhe {activeChallege.amount} xp </header>
+                    <header> Win {activeChallege.amount} xp </header>
 
                     <main>
                         <img src={`icons/${activeChallege.type}.svg`} alt="" />
-                        <strong>Novo Desafio</strong>
+                        <strong>New Challenge</strong>
                         <p>{activeChallege.description}</p>
                     </main>
 
@@ -32,23 +32,23 @@ const ChallengeBox: React.FC = () => {
                             onClick={resetChallenge}
                             className="challengeFailedButton"
                             type="button"
-                        >Falhei
+                        >Failed
                         </Button>
 
                         <Button
                             className="challengeSuccessButton"
                             type="button"
-                        >Completei
+                        >Completed
                         </Button>
                     </footer>
                 </ChallengeActive>
 
             ) : (
                     <NotActive>
-                        <strong>Finalize um ciclo para receber um desafio</strong>
+                        <strong>End a cycle to receive a challenge</strong>
                         <p>
                             <img src="icons/level-up.svg" alt="level up" />
-                     Avance de level completando desafios.
+                            Advance from level to completing challenges.
                  </p>
                     </NotActive>
                 )
