@@ -3,6 +3,12 @@
   <p> O aprendizado é continuo </P>
 </h3>
 
+
+<p align="center">
+   <img src="theme.gif" >
+</p>
+
+
 <p align="center">
    <img src="nlw.png" >
 </p>

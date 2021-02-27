@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     height: 100%;
-    background: var(--white);
+    background:  ${props => props.theme.colors.backgroud};
     border-radius: 5px;
     box-shadow: 0 0 60px rgba(0,0,0,0.05);
     padding: 1.5rem;
@@ -47,7 +47,7 @@ export const ChallengeActive = styled.div`
         flex-direction: column;
 
       header{
-          color: var(--blue);
+          color:  ${props => props.theme.colors.text};
           font-weight: 600;
           font-size: 1.25rem;
           padding: 0 2rem 1.5rem;
@@ -85,7 +85,7 @@ export const ChallengeActive = styled.div`
             justify-content: center;
             border: 0;
             border-radius: 5px;
-            color: var(--white);
+            color:  ${props => props.theme.colors.text};
             font-size: 1rem;
             font-weight: 600;
             transition: filter 0.2s;
