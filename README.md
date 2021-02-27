@@ -1,14 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h3 align="center">
+  NLW4 =>  TRILHA REACTJS, NEXT, CONTEXT.
+  <p> O aprendizado é continuo </P>
+</h3>
 
-## Getting Started
+<p align="center">
+   <img src="nlw.png" >
+</p>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
+### :computer: How To Run
+
+ * Primeiro instale as dependencias:
+ ```bash
+ yarn
+ ```
+
+### :computer: Scripts de inicialização:
+  * Inicie a aplicação em modo desenvolvimento!
+ ```bash
 yarn dev
-```
+ ```
+ * Abra [http://localhost:3000](http://localhost:3000) para vizualizar em seu navegador
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🤔 Tem alguma feature e quer contribuir?
+
+- Faça um fork desse repositório;
+- Cria uma branch com a sua feature: `git checkout -b minha-feature`;
+- Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`;
+- Faça push para a sua branch: `git push origin minha-feature`.
+
+Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
+
+---
+
+Make with ♥ by Wesley Guerra :wave:
+
+
 
