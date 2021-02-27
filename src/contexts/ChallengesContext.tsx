@@ -1,4 +1,7 @@
-import { createContext, useState, ReactNode } from 'react'; // utilizando context
+// utilizando context
+import { createContext, useState, ReactNode } from 'react';
+
+// todos dados do desafio
 import challenges from '../../challenges.json';
 
 interface challenge {
@@ -7,6 +10,7 @@ interface challenge {
     amount: number;
 }
 
+//tipos de dados
 interface challegensContextData {
     level: number,
     currentExperience: number,
@@ -16,40 +20,49 @@ interface challegensContextData {
     startNewChallenge: () => void;
     resetChallenge: () => void;
     experienceToNextLevel: number;
+    completeChallenge: () => void;
 }
 
+//tipo de children
 interface ChallengesProviderPorps {
     children: ReactNode;
 }
 
+// obrigatorio passar um valor inicial //enviado para App.tsx;
+export const ChallengesContext = createContext({} as challegensContextData);
 
-export const ChallengesContext = createContext({} as challegensContextData); // obrigatorio passar um valor inicial
-//enviado para App.tsx;
 
+//compponent para ser importado
 export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children }) => {
-
     const [level, setLevel] = useState(1);
     const [currentExperience, setCurrentExperience] = useState(0);
     const [challengesComleted, setChanllegesCompleted] = useState(0);
     const [activeChallege, setActiveChanllenge] = useState(null);
 
+
+    //calculo de level
     const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
     function startNewChallenge() {
-        /*  
-            *Quando o contador chegar ao final 
+
+        /*  01
+            Inicia desafios
             *Essa função esta liberada pelo context
             *Para ser utilizada global
         */
         const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
-        /* 
-            Pegando desafios aleátorio
-            pegando a quantidade de desafio
+        /* 02
+            *Pegando desafios aleátorio
+            *pegando a quantidade de desafio
         */
 
         const challenge = challenges[randomChallengeIndex];
-        /* 
-            Inseriando na variavel
+
+        /*
+         * 03
+         * Inseriando na variavel os desafios
+         * 
+         * 
         */
 
 
@@ -58,7 +71,6 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
             setando desafio no estado
             que erá passada global no estado
             outro component
-
             chanllengebox
         */
     }
@@ -67,18 +79,29 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
     function resetChallenge() {
         setActiveChanllenge(null);
         /* 
-          * voltando ao estado normal
+          * activeChallege -> Se o desafios esta nulo o component sera exibida outra informação.
+            e terá e voltar o contador ao inicio
           *
         */
     }
 
+    function completeChallenge() {
+        if (!activeChallege) {
+            return;
+        }
+
+        const { amount } = activeChallege;
+
+        let finalExperience = currentExperience + amount;
+    }
 
     function levelUp() {
         setLevel(level + 1);
     }
 
-
     return (
+
+        /* Aqui fica todas informações que vão para conetext global da aplicação */
         <ChallengesContext.Provider value={{
             level,
             currentExperience,
@@ -87,9 +110,10 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
             startNewChallenge,
             activeChallege, // 02 inicando desafio
             resetChallenge,
-            experienceToNextLevel
+            experienceToNextLevel,
+            completeChallenge
         }}>
-            {children}
+            {children} {/* informações que fica dentro contexto App.tsx */}
         </ChallengesContext.Provider>
     )
 

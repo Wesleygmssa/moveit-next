@@ -22,7 +22,7 @@ export const ContentInt = styled.div`
 
     p{
         font-size: 1rem;
-
+        margin-top: 8px;
         img{
          margin-right: 0.5rem;
     }

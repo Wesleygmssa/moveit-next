@@ -7,12 +7,20 @@ import { Container, NotActive, ChallengeActive } from "./styles";
 
 const ChallengeBox: React.FC = () => {
     // const hasActiveChallenge = true; configurando manual para teste.
+
     const { activeChallege, resetChallenge } = useContext(ChallengesContext);
 
     /* Recendo variavel gloval
-       Active com as informações do JSON aletorio para ser exibida na caixa de deafsio
+       
+       activeChallege ->  com as informações do JSON aletorio para ser exibida na caixa de deafsio
        e a função reset desafio onde sera setada com null outra informação para iniciar
        outro desafios.
+    */
+
+
+    /* 
+      resetChallenge -> Uma funão global onde volta ao estado de inicio da variavel.]
+      sendo executada no botão failed
     */
 
     return (

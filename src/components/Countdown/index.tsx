@@ -9,7 +9,7 @@ let countdownTimeOut: NodeJS.Timeout;
 
 const Countdown: React.FC = () => {
 
-    const { startNewChallenge } = useContext(ChallengesContext);
+    const { startNewChallenge, resetChallenge, } = useContext(ChallengesContext);
 
 
     const [time, setTime] = useState(0.1 * 60);
@@ -31,6 +31,8 @@ const Countdown: React.FC = () => {
         setTime(0.1 * 60);
     }
 
+
+
     //iniciando contador
     useEffect(() => {
         if (isActive && time > 0) {
@@ -45,19 +47,21 @@ const Countdown: React.FC = () => {
                 *vamos fazer a regra de negocio
             */
 
-            setHasFinished(true);
+            setHasFinished(true); //ativar button
             /*
              *quando acabar o contador setar como
              *verdadeiro para habilittar o botão 
+
+                    Cycle terminated
             */
 
-            setIsActive(false);
+            setIsActive(false); // parar contador
             /* 
             *Parando o contador 
             *visualmente não muda nada
             */
 
-            startNewChallenge();
+            startNewChallenge(); // iniciar o exercicio
             /* 
             *inicando desafio, 
             *quando contador chegar em zero, 
