@@ -8,7 +8,7 @@ import { Container, NotActive, ChallengeActive } from "./styles";
 const ChallengeBox: React.FC = () => {
     // const hasActiveChallenge = true; configurando manual para teste.
 
-    const { activeChallege, resetChallenge } = useContext(ChallengesContext);
+    const { activeChallege, resetChallenge, completeChallenge } = useContext(ChallengesContext);
 
     /* Recendo variavel gloval
        
@@ -44,6 +44,7 @@ const ChallengeBox: React.FC = () => {
                         </Button>
 
                         <Button
+                            onClick={completeChallenge}
                             className="challengeSuccessButton"
                             type="button"
                         >Completed

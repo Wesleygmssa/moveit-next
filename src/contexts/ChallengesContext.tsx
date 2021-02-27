@@ -85,18 +85,30 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
         */
     }
 
+
+    function levelUp() {
+        setLevel(level + 1);
+    }
+
+
     function completeChallenge() {
         if (!activeChallege) {
             return;
         }
 
+        //quanto de experiencia
         const { amount } = activeChallege;
 
         let finalExperience = currentExperience + amount;
-    }
 
-    function levelUp() {
-        setLevel(level + 1);
+        if (finalExperience >= experienceToNextLevel) {
+            finalExperience = finalExperience - experienceToNextLevel;
+            levelUp();
+        }
+
+        setCurrentExperience(finalExperience);
+        setActiveChanllenge(null);
+        setChanllegesCompleted(challengesComleted + 1)
     }
 
     return (
