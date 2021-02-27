@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ChallengesContext } from "../../contexts/ChallengesContext";
+import { CountdownContext } from "../../contexts/CountdownContext";
 import Button from "../Button";
 import { Container, NotActive, ChallengeActive } from "./styles";
 
@@ -9,19 +10,18 @@ const ChallengeBox: React.FC = () => {
     // const hasActiveChallenge = true; configurando manual para teste.
 
     const { activeChallege, resetChallenge, completeChallenge } = useContext(ChallengesContext);
+    const { resetCountdown } = useContext(CountdownContext);
 
-    /* Recendo variavel gloval
-       
-       activeChallege ->  com as informações do JSON aletorio para ser exibida na caixa de deafsio
-       e a função reset desafio onde sera setada com null outra informação para iniciar
-       outro desafios.
-    */
+    function handleChallengeSucceeded() {
+        completeChallenge();
+        resetCountdown();
+    }
 
+    function handleChanllegeFailed() {
+        resetChallenge();
+        resetCountdown();
+    }
 
-    /* 
-      resetChallenge -> Uma funão global onde volta ao estado de inicio da variavel.]
-      sendo executada no botão failed
-    */
 
     return (
         <Container>
@@ -37,14 +37,14 @@ const ChallengeBox: React.FC = () => {
 
                     <footer>
                         <Button
-                            onClick={resetChallenge}
+                            onClick={handleChanllegeFailed}
                             className="challengeFailedButton"
                             type="button"
                         >Failed
                         </Button>
 
                         <Button
-                            onClick={completeChallenge}
+                            onClick={handleChallengeSucceeded}
                             className="challengeSuccessButton"
                             type="button"
                         >Completed

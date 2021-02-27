@@ -1,76 +1,23 @@
 import { useContext, useEffect, useState } from 'react';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
+import { CountdownContext } from '../../contexts/CountdownContext';
 import Button from '../Button';
 import { ContainerInt, Container } from './styles';
 
 
-
-let countdownTimeOut: NodeJS.Timeout;
-
 const Countdown: React.FC = () => {
+    const {
+        minutes,
+        seconds,
+        hasFinished,
+        isActive,
+        resetCountdown,
+        startCountdown
+    } = useContext(CountdownContext);
 
-    const { startNewChallenge, resetChallenge, } = useContext(ChallengesContext);
 
-
-    const [time, setTime] = useState(0.1 * 60);
-    const [isActive, setIsActive] = useState(false);
-    const [hasFinished, setHasFinished] = useState(false);
-
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60; //resto da divisão
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
     const [secondseLeft, secondsRight] = String(seconds).padStart(2, '0').split('');
-
-    function startCountdown() {
-        setIsActive(true);
-    }
-
-    function resetCountdown() {
-        clearTimeout(countdownTimeOut);
-        setIsActive(false);
-        setTime(0.1 * 60);
-    }
-
-
-
-    //iniciando contador
-    useEffect(() => {
-        if (isActive && time > 0) {
-            countdownTimeOut = setTimeout(() => {
-                setTime(time - 1);
-            }, 1000)
-
-
-        } else if (isActive && time === 0) {
-            /* 
-                *Quando contador acabar, vamos 
-                *vamos fazer a regra de negocio
-            */
-
-            setHasFinished(true); //ativar button
-            /*
-             *quando acabar o contador setar como
-             *verdadeiro para habilittar o botão 
-
-                    Cycle terminated
-            */
-
-            setIsActive(false); // parar contador
-            /* 
-            *Parando o contador 
-            *visualmente não muda nada
-            */
-
-            startNewChallenge(); // iniciar o exercicio
-            /* 
-            *inicando desafio, 
-            *quando contador chegar em zero, 
-            *
-            * (função criada no contexto global )
-            */
-        }
-    }, [isActive, time]);
-
 
     return (
         <Container>
