@@ -7,27 +7,42 @@ import { Container } from "./styles";
 import Head from 'next/head';
 import ChallengeBox from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
+import { ThemeProvider } from 'styled-components';
+import light from '../styles/themes/light';
+import dark from '../styles/themes/dark';
+import { useState } from 'react';
 
 export default function Home() {
+  const [theme, setTheme] = useState(light); // light e um objeto
+
+  const toggleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light)
+  }
+
   return (
-    <Container>
-      <Head>
-        <title>Início | move.it</title>
-      </Head>
-      <GlobalStyled />
-      <ExperienceBar />
-      <CountdownProvider>
-        <section >
-          <div>
-            <Profile />
-            <CompleteChallenges />
-            <Countdown />
-          </div>
-          <div>
-            <ChallengeBox />
-          </div>
-        </section>
-      </CountdownProvider>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <Head>
+          <title>Início | move.it</title>
+        </Head>
+        <GlobalStyled />
+        <ExperienceBar toggleTheme={toggleTheme} />
+        <CountdownProvider>
+          <section >
+            <div>
+              <Profile />
+              <CompleteChallenges />
+              <Countdown />
+            </div>
+            <div>
+              <ChallengeBox />
+            </div>
+          </section>
+        </CountdownProvider>
+      </Container>
+    </ThemeProvider>
+
+
+
   )
 }
