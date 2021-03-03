@@ -49,34 +49,9 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
 
     function startNewChallenge() {
 
-        /*  01
-            Inicia desafios
-            *Essa função esta liberada pelo context
-            *Para ser utilizada global
-        */
         const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
-        /* 02
-            *Pegando desafios aleátorio
-            *pegando a quantidade de desafio
-        */
-
         const challenge = challenges[randomChallengeIndex];
-
-        /*
-         * 03
-         * Inseriando na variavel os desafios
-         * 
-         * 
-        */
-
-
         setActiveChanllenge(challenge);
-        /* 
-            setando desafio no estado
-            que erá passada global no estado
-            outro component
-            chanllengebox
-        */
 
         new Audio('/notification.mp3').play();
 
@@ -132,12 +107,12 @@ export const ChallengesProvider: React.FC<ChallengesProviderPorps> = ({ children
             challengesComleted,
             levelUp,
             startNewChallenge,
-            activeChallege, // 02 inicando desafio
+            activeChallege,
             resetChallenge,
             experienceToNextLevel,
             completeChallenge
         }}>
-            {children} {/* informações que fica dentro contexto App.tsx */}
+            {children}
         </ChallengesContext.Provider>
     )
 

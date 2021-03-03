@@ -56,32 +56,14 @@ export function CountdownProvider({ children }: CountdownProviderPorps) {
 
 
         } else if (isActive && time === 0) {
-            /* 
-                *Quando contador acabar, vamos 
-                *vamos fazer a regra de negocio
-            */
+
 
             setHasFinished(true); //ativar button
-            /*
-             *quando acabar o contador setar como
-             *verdadeiro para habilittar o botão 
-
-                    Cycle terminated
-            */
 
             setIsActive(false); // parar contador
-            /* 
-            *Parando o contador 
-            *visualmente não muda nada
-            */
 
             startNewChallenge(); // iniciar o exercicio
-            /* 
-            *inicando desafio, 
-            *quando contador chegar em zero, 
-            *
-            * (função criada no contexto global )
-            */
+
         }
     }, [isActive, time]);
 

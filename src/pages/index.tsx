@@ -10,10 +10,10 @@ import { CountdownProvider } from "../contexts/CountdownContext";
 import { ThemeProvider } from 'styled-components';
 import light from '../styles/themes/light';
 import dark from '../styles/themes/dark';
-import { useState } from 'react';
+import usePersistedState from '../utils/usePersistedState';
 
 export default function Home() {
-  const [theme, setTheme] = useState(light); // light e um objeto
+  const [theme, setTheme] = usePersistedState('theme', light); // light e um objeto
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light)
