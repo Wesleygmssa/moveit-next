@@ -1,5 +1,5 @@
+import React, { createContext, useState, ReactNode, useEffect } from 'react';
 // utilizando context
-import { createContext, useState, ReactNode, useEffect } from 'react';
 
 // todos dados do desafio
 import challenges from '../../challenges.json';

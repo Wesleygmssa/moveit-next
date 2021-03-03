@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
 import { Header } from './styles';
 import Switch from 'react-switch';

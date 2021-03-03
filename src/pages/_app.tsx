@@ -14,6 +14,3 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp
 
-
-    // <ChallengesContext.Provider value={{ level: 1}}>
-    // </ChallengesContext.Provider>

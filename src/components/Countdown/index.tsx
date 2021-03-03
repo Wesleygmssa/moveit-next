@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { CountdownContext } from '../../contexts/CountdownContext';
 import Button from '../Button';
 import { ContainerInt, Container } from './styles';

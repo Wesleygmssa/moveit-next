@@ -1,3 +1,4 @@
+import React from 'react';
 import CompleteChallenges from "../components/CompleteChallenges";
 import Countdown from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";

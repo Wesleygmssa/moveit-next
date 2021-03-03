@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './styles';
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> //TODOS ELEMENTOS DE BUTTON EX: TYPE, VALUE E <ETC className="6"></ETC>
 
